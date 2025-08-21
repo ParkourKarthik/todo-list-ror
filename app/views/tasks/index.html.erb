@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Tasks" %>
+
+<div class="container">
+  <h3 class="center-align todo-title">My Tasks</h3>
+  <div class="row">
+    <% @tasks.each do |task| %>
+      <div class="col s12 m6 l4">
+        <%= render task %>
+      </div>
+    <% end %>
+  </div>
+  <div class="center-align" style="margin: 2rem 0;">
+    <%= link_to "Add New Task", new_task_path, class: "btn waves-effect waves-light blue" %>
+  </div>
+</div>

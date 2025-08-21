@@ -1,0 +1,33 @@
+<%= form_with(model: task, html: { class: "col s12" }) do |form| %>
+  <% if task.errors.any? %>
+    <div class="card-panel red lighten-4 red-text">
+      <h6><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h6>
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+    <%= form.text_field :title, id: :task_title, class: "validate" %>
+    <%= form.label :title, for: :task_title %>
+  </div>
+
+  <div class="input-field">
+    <%= form.text_area :description, id: :task_description, class: "materialize-textarea" %>
+    <%= form.label :description, for: :task_description %>
+  </div>
+
+  <div class="input-field">
+    <label>
+      <%= form.check_box :completed, id: :task_completed %>
+      <span>Completed</span>
+    </label>
+  </div>
+
+  <div class="input-field center-align">
+    <%= form.submit class: "btn waves-effect waves-light blue" %>
+  </div>
+<% end %>

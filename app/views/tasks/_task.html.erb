@@ -1,0 +1,17 @@
+<div id="<%= dom_id task %>" class="card hoverable">
+  <div class="card-content">
+    <span class="card-title todo-title <%= 'completed' if task.completed %>"><%= task.title %></span>
+    <p class="grey-text text-darken-2"><%= task.description %></p>
+    <p>
+      <label>
+        <input type="checkbox" disabled <%= 'checked' if task.completed %> />
+        <span>Completed</span>
+      </label>
+    </p>
+  </div>
+  <div class="card-action">
+    <%= link_to "Show", task, class: "blue-text text-darken-2" %> |
+    <%= link_to "Edit", edit_task_path(task), class: "orange-text text-darken-2" %> |
+    <%= link_to "Delete", task, method: :delete, data: { confirm: "Are you sure?" }, class: "red-text text-darken-2" %>
+  </div>
+</div>

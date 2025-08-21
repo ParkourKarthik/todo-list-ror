@@ -1,0 +1,29 @@
+/* Custom styles for TODO app using Materialize */
+body {
+  background: #f5f5f5;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.todo-title {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
